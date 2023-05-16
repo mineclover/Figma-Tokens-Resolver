@@ -1,8 +1,8 @@
 name: Update theme.json with Commit Message
 on:
   push:
-    branches:
-      - main # 원하는 브랜치로 변경
+    paths:
+      - 'tokens/tokens.json'
 
 jobs:
   build:
