@@ -1,0 +1,22 @@
+name: Update theme.json with Commit Message
+on:
+  push:
+    branches:
+      - main # 원하는 브랜치로 변경
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update theme.json
+        run: |
+          commit_message=$(git log --format=%B -n 1 ${{ github.sha }})
+          echo [$commit_message] > tokens/themes.json
+          git add theme.json
+          git config user.name "mineclover"
+          git config user.email "mineclover@naver.com"
+          git commit -m "Update theme.json with commit message" --no-verify
+          git push
