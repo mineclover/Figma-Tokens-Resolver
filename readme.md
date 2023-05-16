@@ -1,2 +1,3 @@
-tokens/tokens.json 는 플러그인에서 보내주는 값 ( 무료 버전 )  
-index.js에 있는 StyleDictionary로 만들어지는 형태로 데이터를 쪼개고
+플러그인 연동과 git action으로 tokens/tokens.json 와 tokens/themes.txt를 받는다
+
+index.js을 실행한다

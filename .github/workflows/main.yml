@@ -11,10 +11,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Update theme.json
+      - name: Update theme.txt
         run: |
           commit_message=$(git log --format=%B -n 1 ${{ github.sha }})
-          echo [$commit_message] > tokens/themes.json
+          echo [$commit_message] > tokens/themes.txt
           git add tokens/themes.json
           git config user.name "mineclover"
           git config user.email "mineclover@naver.com"
